@@ -4,17 +4,56 @@ import './slick.css';
 import './slick-theme.css';
 import './SimpleSlider1.css';
 
+
+function SampleNextArrow(props){
+    const {className, style, onClick} = props;
+    return (
+        <div
+            className={className}
+            style={
+                {
+                ...style, 
+                display: 'block', 
+                background: 'red', 
+                zindex:2, 
+                right:0
+                }
+            }
+            onClick={onClick}
+        ></div>
+    );
+}
+
+function SamplePreArrow(props){
+    const {className, style, onClick} = props;
+    return (
+        <div
+            className={className}
+            style={{...style, display:'block', background:'green', zIndex:2, left:0}}
+            onClick={onClick}
+        ></div>
+    )
+}
+
+
+
 class SimpleSlider1 extends Component {
     render(){
-      let settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 300,
-      };
+        let settings = {
+            accessibility: true,
+            className: 'banner_item',
+            adaptiveHeight: true,
+            arrows: true,
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePreArrow />,
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+        };
       return (
         <Slider {...settings}>
             <div>
