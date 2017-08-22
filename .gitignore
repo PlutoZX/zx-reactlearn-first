@@ -19,3 +19,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# IDE
+.idea/
+
+
+# 自带项
+/config
+/scripts
