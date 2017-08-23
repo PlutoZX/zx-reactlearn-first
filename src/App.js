@@ -15,9 +15,9 @@ class App extends Component {
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
 
-                <SimpleSlider1/>
+                <SimpleSlider1 />
 
-                <ResumePop/>
+                <ResumePop />
 
             </div>
         )

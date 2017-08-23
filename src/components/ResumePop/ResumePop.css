@@ -69,7 +69,6 @@
     height: 1px;
     background-color: #D4D9E2;
 }
-
 .ResumePop .resume_pop_box .separate::after {
     content: "";
     position: absolute;
@@ -115,7 +114,7 @@
 }
 
 
-.ResumePop .resume_pop_box .server_box .goresume {
+.ResumePop .resume_pop_box .goresume {
     margin: 30px auto 25px;
     width: 78px;
     height: 32px;
@@ -125,7 +124,9 @@
     text-align: center;
     color: #fff;
     border-radius: 2px;
+    transition: all 200ms linear;
 }
-.ResumePop .resume_pop_box .server_box .goresume:hover {
+.ResumePop .resume_pop_box .goresume:hover {
+    box-shadow: 0 4px 10px #888;
     cursor: pointer;
 }
