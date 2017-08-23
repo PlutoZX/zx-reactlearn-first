@@ -4,84 +4,98 @@ import './slick.css';
 import './slick-theme.css';
 import './SimpleSlider1.css';
 
+// 这里用了无state组件的函数式声明方法 这里的类名里还是接收了react-slick传入的类名，有些样式及翻页函数还是它的
 function SampleNextArrow(props) {
-    const {className, style, onClick} = props;
+    const {className, style, onClick, show} = props;
     return (
         <div
-            className={className}
-            style={{...style, display: 'block', background: 'red', zindex: 2, right: 0}}
+            className={className + ' bannerArrow' + ' bannerArrow_right' + (show?' bannerArrow_show':'')}
             onClick={onClick}
-        >1</div>
+        ></div>
     );
 }
-
 function SamplePreArrow(props) {
-    const {className, style, onClick} = props;
+    const {className, style, onClick, show} = props;
     return (
         <div
-            className={className}
-            style={{...style, display: 'block', background: 'green', zIndex: 2, left: 0}}
+            className={className + ' bannerArrow' + ' bannerArrow_left' + (show?' bannerArrow_show':'')}
             onClick={onClick}
-        >1</div>
+        ></div>
     )
 }
 
-
 class SimpleSlider1 extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            isHoverShowArrow: false
+        };
 
+        this.handleHoverShowArrow = this.handleHoverShowArrow.bind(this);
+        this.handleLeaveHideArrow = this.handleLeaveHideArrow.bind(this);
+    }
 
-    handleClikOnBanner() {
-        alert(1);
+    handleHoverShowArrow(){
+        this.setState({
+            isHoverShowArrow: true
+        })
+    }
+    handleLeaveHideArrow(){
+        this.setState({
+            isHoverShowArrow: false
+        })
     }
 
     render() {
         let settings = {
             accessibility: true,
-            adaptiveHeight: true,
+            adaptiveHeight: false,
             arrows: true,
-            nextArrow: <SampleNextArrow/>,
-            prevArrow: <SamplePreArrow/>,
+            nextArrow: <SampleNextArrow show={this.state.isHoverShowArrow}/>,
+            prevArrow: <SamplePreArrow show={this.state.isHoverShowArrow}/>,
             dots: true,
             infinite: true,
-            speed: 500,
+            speed: 300,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: true,
+            // autoplay: true,
             autoplaySpeed: 3000,
         };
         return (
-            <Slider {...settings}>
-                <div>
-                    <div className="banner_item" onClick={this.handleClikOnBanner}>
-                        <img src="https://yunlaiwu0.cn-bj.ufileos.com/编辑简历.png" alt="banner"/>
+            <div className="bannerSliderBox" onMouseEnter={this.handleHoverShowArrow} onMouseLeave={this.handleLeaveHideArrow}>
+                <Slider {...settings}>
+                    <div>
+                        <div className="banner_item">
+                            <a href="javascript:;" className="banner_item1"></a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="banner_item">
-                        <img src="https://yunlaiwu0.cn-bj.ufileos.com/motie-PCbanner-2560_480.png" alt="banner"/>
+                    <div>
+                        <div className="banner_item">
+                            <a href="javascript:;" className="banner_item2"></a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="banner_item">
-                        <img src="https://yunlaiwu0.cn-bj.ufileos.com/newwriter-banner1.jpg" alt="banner"/>
+                    <div>
+                        <div className="banner_item">
+                            <a href="javascript:;" className="banner_item3"></a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="banenr_item">
-                        <img src="http://yunlaiwu0.cn-bj.ufileos.com/shandianzhenggao.jpg" alt="banner"/>
+                    <div>
+                        <div className="banner_item">
+                            <a href="javascript:;" className="banner_item4"></a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="banner_item">
-                        <img src="http://yunlaiwu0.cn-bj.ufileos.com/pc端banner-版保.jpg" alt="banner"/>
+                    <div>
+                        <div className="banner_item">
+                            <a href="javascript:;" className="banner_item5"></a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="banner_item">
-                        <img src="https://yunlaiwu0.cn-bj.ufileos.com/Banner-AppDownload.png" alt="banner"/>
+                    <div>
+                        <div className="banner_item">
+                            <a href="javascript:;" className="banner_item6"></a>
+                        </div>
                     </div>
-                </div>
-            </Slider>
+                </Slider>
+            </div>
         );
     }
 }
