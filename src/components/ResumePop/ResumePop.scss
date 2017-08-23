@@ -1,0 +1,125 @@
+.ResumePop {
+    /*display: none;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1111;
+    .layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        opacity: 0.7;
+    }
+    .resume_pop_box {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 500px;
+        height: 628px;
+        background-color: #fff;
+        h2 {
+            margin: 20px auto 0;
+            height: 25px;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+            color: #434C5F;
+            position: relative;
+            i {
+                font-size: 16px;
+                position: absolute;
+                top: 2px;
+                right: 25px;
+                color: #D4D9E2;
+            }
+        }
+        .img1 {
+            display: block;
+            width: 460px;
+            height: 185px;
+            margin: 25px auto 0;
+        }
+        .separate {
+            position: relative;
+            width: 460px;
+            height: 17px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 17px;
+            color: #8C96A9;
+            margin: 20px auto 0;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform-origin: 0 0;
+                -webkit-transform: translate3d(0, -50%, 0) scaleY(0.5);
+                transform: translate3d(0, -50%, 0) scaleY(0.5);
+                width: 85px;
+                height: 1px;
+                background-color: #D4D9E2;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform-origin: 0 0;
+                -webkit-transform: translate3d(0, -50%, 0) scaleY(0.5);
+                transform: translate3d(0, -50%, 0) scaleY(0.5);
+                width: 85px;
+                height: 1px;
+                background-color: #D4D9E2;
+            }
+        }
+        .server_box {
+            width: 460px;
+            margin: 30px auto 0;
+            overflow: hidden;
+            h3 {
+                height: 20px;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                color: #596377;
+                margin: 0 auto;
+            }
+            img {
+                display: block;
+                width: 210px;
+                height: 185px;
+                margin: 15px auto 0;
+            }
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
+        }
+        .goresume {
+            margin: 30px auto 25px;
+            width: 78px;
+            height: 32px;
+            background-color: #8C96A9;
+            font-size: 12px;
+            line-height: 32px;
+            text-align: center;
+            color: #fff;
+            border-radius: 2px;
+            transition: all 200ms linear;
+            &:hover {
+                box-shadow: 0 4px 10px #888;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
