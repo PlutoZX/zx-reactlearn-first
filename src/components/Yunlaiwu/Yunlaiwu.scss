@@ -1,0 +1,55 @@
+.yunlaiwu {
+    margin: 50px auto;
+    .yunlaiwu_title {
+        margin: 0 auto;
+        font-size: 36px;
+        line-height: 50px;
+        text-align: center;
+        font-weight: 300;
+        color: #4a4a4a;
+    }
+    .yunlaiwu_intro {
+        margin: 15px auto 0;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        font-weight: 300;
+        color: #707070;
+    }
+    .candu_item_box {
+        margin: 15px auto 0;
+        .candu_item {
+            font-size: 20px;
+            line-height: 28px;
+            text-align: center;
+            font-weight: 300;
+            color: #9b9b9b;
+            cursor: pointer;
+            &.selected {
+                color: #4a4a4a;
+                font-weight: 400;
+            }
+        }
+    }
+    .candu_itemmin {
+        display: none;
+        margin: 0 auto;
+        font-size: 14px;
+        text-align: center;
+        color: #9b9b9b;
+        &.selected {
+            display: block;
+        }
+    }
+    .whatimg {
+        display: none;
+        width: 801px;
+        height: 480px;
+        margin: 20px auto 0;
+        &.selected {
+            display: block;
+        }
+    }
+}
+
+

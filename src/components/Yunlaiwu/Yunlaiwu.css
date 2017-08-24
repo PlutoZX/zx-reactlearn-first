@@ -1,0 +1,43 @@
+.yunlaiwu {
+  margin: 50px auto; }
+  .yunlaiwu .yunlaiwu_title {
+    margin: 0 auto;
+    font-size: 36px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 300;
+    color: #4a4a4a; }
+  .yunlaiwu .yunlaiwu_intro {
+    margin: 15px auto 0;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    font-weight: 300;
+    color: #707070; }
+  .yunlaiwu .candu_item_box {
+    margin: 15px auto 0; }
+    .yunlaiwu .candu_item_box .candu_item {
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      font-weight: 300;
+      color: #9b9b9b;
+      cursor: pointer; }
+      .yunlaiwu .candu_item_box .candu_item.selected {
+        color: #4a4a4a;
+        font-weight: 400; }
+  .yunlaiwu .candu_itemmin {
+    display: none;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+    color: #9b9b9b; }
+    .yunlaiwu .candu_itemmin.selected {
+      display: block; }
+  .yunlaiwu .whatimg {
+    display: none;
+    width: 801px;
+    height: 480px;
+    margin: 20px auto 0; }
+    .yunlaiwu .whatimg.selected {
+      display: block; }

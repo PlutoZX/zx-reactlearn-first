@@ -40,7 +40,7 @@
   height: 38px;
   z-index: 2;
   background-size: contain;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   opacity: 0; }
   .bannerArrow:before {
     content: ''; }

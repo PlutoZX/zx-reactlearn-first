@@ -5,24 +5,17 @@ import './slick-theme.css';
 import './SimpleSlider1.css';
 
 // 这里用了无state组件的函数式声明方法 这里的类名里还是接收了react-slick传入的类名，有些样式及翻页函数还是它的
-function SampleNextArrow(props) {
-    const {className, style, onClick, show} = props;
+// 无state组件的函数式声明在使用props时直接用props，而class式的声明是this.props的形式
+function SliderArrow(props) {
+    // const {className, style, onClick, show} = props;
     return (
         <div
-            className={className + ' bannerArrow' + ' bannerArrow_right' + (show?' bannerArrow_show':'')}
-            onClick={onClick}
-        ></div>
+            className={props.className + ' bannerArrow' + (props.direct === 'right' ? ' bannerArrow_right' : ' bannerArrow_left') + (props.show ? ' bannerArrow_show' : '')}
+            onClick={props.onClick}
+        > </div>
     );
 }
-function SamplePreArrow(props) {
-    const {className, style, onClick, show} = props;
-    return (
-        <div
-            className={className + ' bannerArrow' + ' bannerArrow_left' + (show?' bannerArrow_show':'')}
-            onClick={onClick}
-        ></div>
-    )
-}
+
 
 class SimpleSlider1 extends Component {
     constructor(props){
@@ -51,8 +44,8 @@ class SimpleSlider1 extends Component {
             accessibility: true,
             adaptiveHeight: false,
             arrows: true,
-            nextArrow: <SampleNextArrow show={this.state.isHoverShowArrow}/>,
-            prevArrow: <SamplePreArrow show={this.state.isHoverShowArrow}/>,
+            nextArrow: <SliderArrow direct="right" show={this.state.isHoverShowArrow}/>,
+            prevArrow: <SliderArrow direct="left" show={this.state.isHoverShowArrow}/>,
             dots: true,
             infinite: true,
             speed: 300,
