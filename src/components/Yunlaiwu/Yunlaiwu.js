@@ -23,18 +23,19 @@ class YunlaiwuPlate extends Component {
     }
 
     handleHoverChange(e){
-        this.props.onPlateChange(e.target.getAttribute("class"));
+        this.props.onPlateChange(e.target.getAttribute("data-index"));
     }
 
     render(){
+        const platehover = parseInt(this.props.platehover);
         return(
             <div className="candu_item_box">
                 {
                     this.props.plate.map((value, index) => {
                         if(index === 0 ){
-                            return <span className="candu_item selected" key={index} onMouseEnter={this.handleHoverChange}>{value}</span>
+                            return <span className={'candu_item' + (platehover === index ? ' selected' : '')} key={index} onMouseEnter={this.handleHoverChange} data-index={index} >{value}</span>
                         }else {
-                            return <span key={index}> / <span className="candu_item" >{value}</span></span>
+                            return <span key={index}> / <span className={'candu_item' + (platehover === index ? ' selected' : '')} onMouseEnter={this.handleHoverChange} data-index={index} >{value}</span></span>
                         }
                     })
                 }
