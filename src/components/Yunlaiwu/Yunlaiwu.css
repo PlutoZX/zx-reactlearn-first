@@ -1,5 +1,5 @@
 .yunlaiwu {
-  margin: 50px auto; }
+  margin: 80px auto; }
   .yunlaiwu .yunlaiwu_title {
     margin: 0 auto;
     font-size: 36px;
@@ -22,22 +22,49 @@
       text-align: center;
       font-weight: 300;
       color: #9b9b9b;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 200ms linear; }
       .yunlaiwu .candu_item_box .candu_item.selected {
         color: #4a4a4a;
         font-weight: 400; }
   .yunlaiwu .candu_itemmin {
     display: none;
-    margin: 0 auto;
+    opacity: 0;
+    margin: 50px auto 30px;
     font-size: 14px;
     text-align: center;
-    color: #9b9b9b; }
+    color: #9b9b9b;
+    transition: all 200ms linear; }
     .yunlaiwu .candu_itemmin.selected {
-      display: block; }
-  .yunlaiwu .whatimg {
-    display: none;
+      display: block;
+      opacity: 1; }
+  .yunlaiwu .whatimg_box {
+    position: relative;
+    margin: 0 auto;
     width: 801px;
-    height: 480px;
-    margin: 20px auto 0; }
-    .yunlaiwu .whatimg.selected {
-      display: block; }
+    height: 480px; }
+    .yunlaiwu .whatimg_box .whatimg {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      width: 801px;
+      height: 480px;
+      margin: 20px auto 0;
+      transition: all 200ms linear; }
+      .yunlaiwu .whatimg_box .whatimg.selected {
+        opacity: 1; }
+  .yunlaiwu .canduimg_box {
+    position: relative;
+    margin: 0 auto;
+    width: 700px;
+    height: 422px; }
+    .yunlaiwu .canduimg_box .canduimg {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      width: 700px;
+      height: 422px;
+      margin: 20px auto 0;
+      transition: all 200ms linear; }
+      .yunlaiwu .canduimg_box .canduimg.selected {
+        opacity: 1; }

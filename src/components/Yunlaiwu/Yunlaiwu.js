@@ -27,15 +27,24 @@ class YunlaiwuPlate extends Component {
     }
 
     render(){
-        const platehover = parseInt(this.props.platehover);
+        const platehover = parseInt(this.props.platehover); // 注意标签属性的数据类型
         return(
             <div className="candu_item_box">
                 {
                     this.props.plate.map((value, index) => {
                         if(index === 0 ){
-                            return <span className={'candu_item' + (platehover === index ? ' selected' : '')} key={index} onMouseEnter={this.handleHoverChange} data-index={index} >{value}</span>
+                            return <span
+                                className={'candu_item' + (platehover === index ? ' selected' : '')}
+                                key={index}
+                                onMouseEnter={this.handleHoverChange}
+                                data-index={index} >{value}</span>
                         }else {
-                            return <span key={index}> / <span className={'candu_item' + (platehover === index ? ' selected' : '')} onMouseEnter={this.handleHoverChange} data-index={index} >{value}</span></span>
+                            return <span key={index}> / <span
+                                        className={'candu_item' + (platehover === index ? ' selected' : '')}
+                                        onMouseEnter={this.handleHoverChange}
+                                        data-index={index} >{value}
+                                        </span>
+                                    </span>
                         }
                     })
                 }
@@ -51,14 +60,15 @@ class YunlaiwuPlatemin extends Component {
     }
     render(){
         const platemin = this.props.platemin;
+        const platehover = parseInt(this.props.platehover);
         return (
             <div>
                 {
                     platemin.map((value, index) => {
                         if(index === 0){
-                            return <p className="candu_itemmin selected" key={index}>{value}</p>
+                            return <p className={'candu_itemmin' + (platehover === index ? ' selected' : '')} key={index}>{value}</p>
                         }
-                        return <p className="candu_itemmin" key={index}>{value}</p>
+                        return <p className={'candu_itemmin' + (platehover === index ? ' selected' : '')} key={index}>{value}</p>
                     })
                 }
             </div>
@@ -74,14 +84,15 @@ class YunlaiwuImg extends Component {
     render(){
         const imgs = this.props.imgs;
         const clsName = this.props.clsName;
+        const platehover = parseInt(this.props.platehover);
         return(
-            <div>
+            <div className={clsName + "_box"}>
                 {
                     imgs.map((value, index) => {
                         if(index === 0){
-                            return <img src={value}  className={clsName + ' selected'} alt="" key={index}/>
+                            return <img src={value}  className={clsName + (platehover === index ? ' selected' : '')} alt="" key={index}/>
                         }
-                        return <img src={value}  className={clsName} alt="" key={index}/>
+                        return <img src={value}  className={clsName + (platehover === index ? ' selected' : '')} alt="" key={index}/>
                     })
                 }
             </div>
@@ -101,7 +112,6 @@ class Yunlaiwu extends Component {
     }
 
     handlePlateChange(index){
-        console.log(index);
         this.setState({
             isPlateHover: index
         });
@@ -111,6 +121,7 @@ class Yunlaiwu extends Component {
         const titletext = this.props.titletext;
         const introtext = this.props.introtext;
         const imgs = this.props.imgs;
+        const imgName = this.props.imgName;
         const plate = this.props.plate;
         const platemin = this.props.platemin;
         const platehover = this.state.isPlateHover;
@@ -120,8 +131,8 @@ class Yunlaiwu extends Component {
             <YunlaiwuTitle text={titletext}/>
             { introtext ? <YunlaiwuIntro text={introtext}/> : null }
             { plate ? <YunlaiwuPlate plate={plate} platehover={platehover} onPlateChange={this.handlePlateChange}/> : null }
-            { platemin ? <YunlaiwuPlatemin platehover={platehover} platemin={platemin} /> : null }
-            <YunlaiwuImg imgs={imgs} clsName="whatimg" platehover={platehover}/>
+            { platemin ? <YunlaiwuPlatemin platemin={platemin} platehover={platehover} /> : null }
+            <YunlaiwuImg imgs={imgs} clsName={imgName} platehover={platehover}/>
         </div>
         )
     }

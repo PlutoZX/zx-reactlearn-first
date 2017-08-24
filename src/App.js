@@ -22,6 +22,7 @@ class App extends Component {
                     imgs={[
                         'https://yunlaiwu0.cn-bj.ufileos.com/%E4%BA%91%E8%8E%B1%E5%9D%9E%E6%98%AF%E4%BB%80%E4%B9%88%402x.png'
                     ]}
+                    imgName="whatimg"
                 />
                 <Yunlaiwu
                     titletext="云莱坞可以做什么"
@@ -40,6 +41,7 @@ class App extends Component {
                         'https://yunlaiwu0.cn-bj.ufileos.com/%E4%BA%91%E8%8E%B1%E5%9D%9E%E5%81%9A%E4%BB%80%E4%B9%882%402x.png',
                         'https://yunlaiwu0.cn-bj.ufileos.com/%E4%BA%91%E8%8E%B1%E5%9D%9E%E5%81%9A%E4%BB%80%E4%B9%883%402x.png'
                     ]}
+                    imgName="canduimg"
                 />
 
 

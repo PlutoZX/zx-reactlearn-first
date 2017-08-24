@@ -1,5 +1,5 @@
 .yunlaiwu {
-    margin: 50px auto;
+    margin: 80px auto;
     .yunlaiwu_title {
         margin: 0 auto;
         font-size: 36px;
@@ -25,6 +25,7 @@
             font-weight: 300;
             color: #9b9b9b;
             cursor: pointer;
+            transition: all 200ms linear;
             &.selected {
                 color: #4a4a4a;
                 font-weight: 400;
@@ -33,23 +34,55 @@
     }
     .candu_itemmin {
         display: none;
-        margin: 0 auto;
+        opacity: 0;
+        margin: 50px auto 30px;
         font-size: 14px;
         text-align: center;
         color: #9b9b9b;
+        transition: all 200ms linear;
         &.selected {
             display: block;
+            opacity: 1;
         }
     }
-    .whatimg {
-        display: none;
+    .whatimg_box {
+        position: relative;
+        margin: 0 auto;
         width: 801px;
         height: 480px;
-        margin: 20px auto 0;
-        &.selected {
-            display: block;
+        .whatimg {
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            width: 801px;
+            height: 480px;
+            margin: 20px auto 0;
+            transition: all 200ms linear;
+            &.selected {
+                opacity: 1;
+            }
         }
     }
+    .canduimg_box {
+        position: relative;
+        margin: 0 auto;
+        width: 700px;
+        height: 422px;
+        .canduimg {
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            width: 700px;
+            height: 422px;
+            margin: 20px auto 0;
+            transition: all 200ms linear;
+            &.selected {
+                opacity: 1;
+            }
+        }
+    }
+
+
 }
 
 
