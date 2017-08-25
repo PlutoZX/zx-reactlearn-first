@@ -33,33 +33,29 @@
         background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/Banner-AppDownload.png); }
   .bannerSliderBox .slick-dots {
     bottom: 0; }
-
-.bannerArrow {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  z-index: 2;
-  background-size: contain;
-  transition: all 0.3s linear;
-  opacity: 0; }
-  .bannerArrow:before {
-    content: ''; }
-  .bannerArrow:after {
-    content: ''; }
-
-.bannerArrow_left {
-  left: 50px;
-  background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_leftnew.png); }
-  .bannerArrow_left:hover {
-    background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_leftnew.png);
-    background-size: contain; }
-
-.bannerArrow_right {
-  right: 50px;
-  background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_rightnew.png); }
-  .bannerArrow_right:hover {
-    background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_rightnew.png);
-    background-size: contain; }
-
-.bannerArrow.bannerArrow_show {
-  opacity: 1; }
+  .bannerSliderBox .bannerArrow {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    z-index: 2;
+    background-size: contain;
+    transition: all 0.3s linear;
+    opacity: 0; }
+    .bannerSliderBox .bannerArrow:before {
+      content: ''; }
+    .bannerSliderBox .bannerArrow:after {
+      content: ''; }
+  .bannerSliderBox .bannerArrow_left {
+    left: 50px;
+    background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_leftnew.png); }
+    .bannerSliderBox .bannerArrow_left:hover {
+      background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_leftnew.png);
+      background-size: contain; }
+  .bannerSliderBox .bannerArrow_right {
+    right: 50px;
+    background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_rightnew.png); }
+    .bannerSliderBox .bannerArrow_right:hover {
+      background-image: url(https://yunlaiwu0.cn-bj.ufileos.com/home_banner_rightnew.png);
+      background-size: contain; }
+  .bannerSliderBox .bannerArrow.bannerArrow_show {
+    opacity: 1; }

@@ -103,10 +103,38 @@ class YunlaiwuImg extends Component {
     }
 }
 // 成交案例轮播
+function SliderArrow(props){
+    return (
+        <div
+            className={props.className + ' dealArrow' + (props.direct === 'left' ? ' dealArrow_left' : ' dealArrow_right') + (props.show ? ' dealArrow_show' : '')}
+            onClick={props.onClick}
+        >
+        </div>
+    )
+}
 class YunlaiwuSlider extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            isHoverShowArrow: false
+        };
+
+        this.handleHoverShowArrow  = this.handleHoverShowArrow.bind(this);
+        this.handleLeaveHideArrow = this.handleLeaveHideArrow.bind(this);
     }
+
+    handleHoverShowArrow(){
+        this.setState({
+            isHoverShowArrow: true
+        })
+    }
+    handleLeaveHideArrow(){
+        this.setState({
+            isHoverShowArrow: false
+        })
+    }
+
+
     render(){
         let settings = {
             accessibility: true,
@@ -116,9 +144,12 @@ class YunlaiwuSlider extends Component {
             speed: 500,
             slidesToShow: 3,
             slidesToScroll: 3,
+            arrows: true,
+            nextArrow: <SliderArrow direct="right" show={this.state.isHoverShowArrow}/>,
+            prevArrow: <SliderArrow direct="left" show={this.state.isHoverShowArrow}/>
         };
         return (
-            <div className="dealitem_box">
+            <div className="dealitem_box" onMouseEnter={this.handleHoverShowArrow} onMouseLeave={this.handleLeaveHideArrow}>
                 <Slider {...settings}>
                     <div>
                         <a href="javascript:;" className="dealitem" style={{backgroundImage: 'url(https://yunlaiwu0.cn-bj.ufileos.com/chengjiao-lantingxumima.png)'}}>
