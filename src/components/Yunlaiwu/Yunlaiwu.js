@@ -8,10 +8,16 @@ import './Yunlaiwu.css';
 
 // 标题
 function YunlaiwuTitle(props){
-    return <h2 className="yunlaiwu_title" >{props.text}</h2>
+    if(!props.text){
+        return null;
+    }
+    return <h2 className="yunlaiwu_title" >{props.text}</h2>;
 }
 // 介绍
 function YunlaiwuIntro(props){
+    if(!props.text){
+        return null;
+    }
     return <p className="yunlaiwu_intro">{props.text}</p>
 }
 // 板块
