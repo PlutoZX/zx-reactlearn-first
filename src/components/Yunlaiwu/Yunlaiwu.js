@@ -99,7 +99,7 @@ class YunlaiwuImg extends Component {
         )
     }
 }
-
+// 成交案例轮播
 
 
 class Yunlaiwu extends Component {
@@ -128,11 +128,11 @@ class Yunlaiwu extends Component {
 
         return (
         <div className="yunlaiwu">
-            <YunlaiwuTitle text={titletext}/>
+            { titletext ? <YunlaiwuTitle text={titletext}/> : null }
             { introtext ? <YunlaiwuIntro text={introtext}/> : null }
             { plate ? <YunlaiwuPlate plate={plate} platehover={platehover} onPlateChange={this.handlePlateChange}/> : null }
             { platemin ? <YunlaiwuPlatemin platemin={platemin} platehover={platehover} /> : null }
-            <YunlaiwuImg imgs={imgs} clsName={imgName} platehover={platehover}/>
+            { imgs ? <YunlaiwuImg imgs={imgs} clsName={imgName} platehover={platehover}/> : null }
         </div>
         )
     }
