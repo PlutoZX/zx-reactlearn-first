@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Slider from 'react-slick';
+import './slick.css';
+import './slick-theme.css';
 import './Yunlaiwu.css';
 
 
@@ -100,7 +103,70 @@ class YunlaiwuImg extends Component {
     }
 }
 // 成交案例轮播
-
+class YunlaiwuSlider extends Component {
+    constructor(props){
+        super(props);
+    }
+    render(){
+        let settings = {
+            accessibility: true,
+            adaptiveHeight: true, // 默认是true，这里不要改成false，要不然不能自己匹配间距，不用主动调整间距，只需设定总长及每个轮播长度，间距自动计算
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+        };
+        return (
+            <div className="dealitem_box">
+                <Slider {...settings}>
+                    <div>
+                        <a href="javascript:;" className="dealitem" style={{backgroundImage: 'url(https://yunlaiwu0.cn-bj.ufileos.com/chengjiao-lantingxumima.png)'}}>
+                            <div>唐隐《大唐悬疑录：兰亭序密码》</div>
+                            <div className="deal_cover"></div>
+                            <div>类型：悬疑、古装</div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;" className="dealitem" style={{backgroundImage: 'url(https://yunlaiwu0.cn-bj.ufileos.com/chengjiao-lantingxumima.png)'}}>
+                            <div>唐隐《大唐悬疑录：兰亭序密码》</div>
+                            <div className="deal_cover"></div>
+                            <div>类型：悬疑、古装</div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;" className="dealitem" style={{backgroundImage: 'url(https://yunlaiwu0.cn-bj.ufileos.com/chengjiao-lantingxumima.png)'}}>
+                            <div>唐隐《大唐悬疑录：兰亭序密码》</div>
+                            <div className="deal_cover"></div>
+                            <div>类型：悬疑、古装</div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;" className="dealitem" style={{backgroundImage: 'url(https://yunlaiwu0.cn-bj.ufileos.com/chengjiao-lantingxumima.png)'}}>
+                            <div>唐隐《大唐悬疑录：兰亭序密码》</div>
+                            <div className="deal_cover"></div>
+                            <div>类型：悬疑、古装</div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;" className="dealitem" style={{backgroundImage: 'url(https://yunlaiwu0.cn-bj.ufileos.com/chengjiao-lantingxumima.png)'}}>
+                            <div>唐隐《大唐悬疑录：兰亭序密码》</div>
+                            <div className="deal_cover"></div>
+                            <div>类型：悬疑、古装</div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;" className="dealitem" style={{backgroundImage: 'url(https://yunlaiwu0.cn-bj.ufileos.com/chengjiao-lantingxumima.png)'}}>
+                            <div>唐隐《大唐悬疑录：兰亭序密码》</div>
+                            <div className="deal_cover"></div>
+                            <div>类型：悬疑、古装</div>
+                        </a>
+                    </div>
+                </Slider>
+            </div>
+        )
+    }
+}
 
 class Yunlaiwu extends Component {
     constructor(props){
@@ -125,14 +191,16 @@ class Yunlaiwu extends Component {
         const plate = this.props.plate;
         const platemin = this.props.platemin;
         const platehover = this.state.isPlateHover;
+        const showslider = this.props.showslider;
 
         return (
         <div className="yunlaiwu">
-            { titletext ? <YunlaiwuTitle text={titletext}/> : null }
-            { introtext ? <YunlaiwuIntro text={introtext}/> : null }
-            { plate ? <YunlaiwuPlate plate={plate} platehover={platehover} onPlateChange={this.handlePlateChange}/> : null }
+            { titletext ? <YunlaiwuTitle text={titletext} /> : null }
+            { introtext ? <YunlaiwuIntro text={introtext} /> : null }
+            { plate ? <YunlaiwuPlate plate={plate} platehover={platehover} onPlateChange={this.handlePlateChange} /> : null }
             { platemin ? <YunlaiwuPlatemin platemin={platemin} platehover={platehover} /> : null }
-            { imgs ? <YunlaiwuImg imgs={imgs} clsName={imgName} platehover={platehover}/> : null }
+            { imgs ? <YunlaiwuImg imgs={imgs} clsName={imgName} platehover={platehover} /> : null }
+            { showslider ? <YunlaiwuSlider /> : null }
         </div>
         )
     }

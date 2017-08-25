@@ -51,8 +51,11 @@ class App extends Component {
                     ]}
                     imgName="tradeimg"
                 />
-
-
+                <Yunlaiwu
+                    titletext="成交案例"
+                    introtext="云莱坞影视版权成交金额过亿"
+                    showslider={!!1}
+                />
 
 
             </div>
