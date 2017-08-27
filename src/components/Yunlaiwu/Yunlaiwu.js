@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import './slick.css';
 import './slick-theme.css';
 import './Yunlaiwu.css';
+import axios from 'axios';
 
 
 
@@ -204,6 +205,7 @@ class YunlaiwuSlider extends Component {
         )
     }
 }
+
 
 class Yunlaiwu extends Component {
     constructor(props){
