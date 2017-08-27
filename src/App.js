@@ -44,7 +44,7 @@ class App extends Component {
                     imgName="canduimg"
                 />
                 <Yunlaiwu
-                    titletext="如何在云莱坞进行交易" 
+                    titletext="如何在云莱坞进行交易"
                     introtext="简单四步轻松搞定"
                     imgs={[
                         'http://yunlaiwu0.cn-bj.ufileos.com/buzhou.png'

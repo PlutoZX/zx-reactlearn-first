@@ -43,13 +43,13 @@ class YunlaiwuPlate extends Component {
                     this.props.plate.map((value, index) => {
                         if(index === 0 ){
                             return <span
-                                className={'candu_item' + (platehover === index ? ' selected' : '')}
+                                className={`candu_item ${platehover === index ? 'selected' : ''}`}
                                 key={index}
                                 onMouseEnter={this.handleHoverChange}
                                 data-index={index} >{value}</span>
                         }else {
                             return <span key={index}> / <span
-                                        className={'candu_item' + (platehover === index ? ' selected' : '')}
+                                        className={`candu_item ${platehover === index ? 'selected' : ''}`}
                                         onMouseEnter={this.handleHoverChange}
                                         data-index={index} >{value}
                                         </span>
@@ -75,9 +75,9 @@ class YunlaiwuPlatemin extends Component {
                 {
                     platemin.map((value, index) => {
                         if(index === 0){
-                            return <p className={'candu_itemmin' + (platehover === index ? ' selected' : '')} key={index}>{value}</p>
+                            return <p className={`candu_itemmin ${platehover === index ? 'selected' : ''}`} key={index}>{value}</p>
                         }
-                        return <p className={'candu_itemmin' + (platehover === index ? ' selected' : '')} key={index}>{value}</p>
+                        return <p className={`candu_itemmin ${platehover === index ? 'selected' : ''}`} key={index}>{value}</p>
                     })
                 }
             </div>
@@ -95,13 +95,13 @@ class YunlaiwuImg extends Component {
         const clsName = this.props.clsName;
         const platehover = parseInt(this.props.platehover);
         return(
-            <div className={clsName + "_box"}>
+            <div className={`${clsName}_box`}>
                 {
                     imgs.map((value, index) => {
                         if(index === 0){
-                            return <img src={value}  className={clsName + (platehover === index ? ' selected' : '')} alt="" key={index}/>
+                            return <img src={value}  className={`${clsName} ${platehover === index ? 'selected' : ''}`} alt="" key={index}/>
                         }
-                        return <img src={value}  className={clsName + (platehover === index ? ' selected' : '')} alt="" key={index}/>
+                        return <img src={value}  className={`${clsName} ${platehover === index ? 'selected' : ''}`} alt="" key={index}/>
                     })
                 }
             </div>
@@ -112,7 +112,7 @@ class YunlaiwuImg extends Component {
 function SliderArrow(props){
     return (
         <div
-            className={props.className + ' dealArrow' + (props.direct === 'left' ? ' dealArrow_left' : ' dealArrow_right') + (props.show ? ' dealArrow_show' : '')}
+            className={`${props.className} dealArrow ${props.direct === 'left' ? 'dealArrow_left' : 'dealArrow_right'} ${props.show ? 'dealArrow_show' : ''}`}
             onClick={props.onClick}
         >
         </div>
