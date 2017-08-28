@@ -220,7 +220,7 @@ class Yunlaiwu extends Component {
         this.setState({
             isPlateHover: index
         });
-    }
+    } 
 
     render(){
         const titletext = this.props.titletext;
